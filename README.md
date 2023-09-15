@@ -43,14 +43,14 @@ The workshop also incorporates a number of data sources like:
 
 ## Sections (Parts)
 
-[Part 1: Lakehouse and Data Engineering](https://github.com/DataSnowman/fabriclakehouse/tree/main#part-1:-lakehouse-and-data-engineering)
+[Part 1: Lakehouse and Data Engineering](https://github.com/DataSnowman/fabriclakehouse/tree/main#part-1-lakehouse-and-data-engineering)
 
 
-[Part 2: Lakehouse and Data Science (To be added)](https://github.com/DataSnowman/fabriclakehouse/tree/main#sections-(parts))
+[Part 2: Lakehouse and Data Science (To be added)](https://github.com/DataSnowman/fabriclakehouse/tree/main#sections-parts)
 
-[Part 3: Data Warehouse (To be added)](https://github.com/DataSnowman/fabriclakehouse/tree/main#sections-(parts))
+[Part 3: Data Warehouse (To be added)](https://github.com/DataSnowman/fabriclakehouse/tree/main#sections-parts)
 
-[Part 4: Real Time Analytics (To be added)](https://github.com/DataSnowman/fabriclakehouse/tree/main#sections-(parts))
+[Part 4: Real Time Analytics (To be added)](https://github.com/DataSnowman/fabriclakehouse/tree/main#sections-parts)
 
 
 ## Part 1: Lakehouse and Data Engineering
