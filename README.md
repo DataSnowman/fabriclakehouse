@@ -32,12 +32,17 @@ Part 4: Real Time Analytics (To be added)
     - Power BI (Data Analysis)
 
     
+## Data Sources 
 
 The workshop also incorporates a number of data sources like:
+
+Public
 
 [Centers for Medicare & Medicai Services data.cms.gov](https://data.cms.gov/)
 
 * [Medicare Part D Prescribers - by Provider and Drug](https://data.cms.gov/provider-summary-by-type-of-service/medicare-part-d-prescribers/medicare-part-d-prescribers-by-provider-and-drug/data/2013)
+
+Personal
 
 [Some data off of my PC when playing Minecraft](https://www.minecraft.net/en-us/store/minecraft-deluxe-collection-pc)
 
@@ -52,21 +57,38 @@ The workshop also incorporates a number of data sources like:
 
 [Part 4: Real Time Analytics (To be added)](https://github.com/DataSnowman/fabriclakehouse/tree/main#sections-parts)
 
+```Note: to use Microsoft Fabric in your Power BI Tenant your Power BI admin is going to need to enable the Microsoft Fabric Trial```
 
 ## Part 1: Lakehouse and Data Engineering
 
-Enter your userid and click Next
+Log into Microsoft Fabric at https://fabric.microsoft.com with your Azure Active Directory userid (work email) and password.  Same one you use to access M365.
 
-![labsignin](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/labsignin.png)
+![fabrichome](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/fabrichome.png)
 
-Enter your password and click Sign in
+Since we want to create a lakehouse and do data engineering tasks click on the Microsoft Fabric icon in the bottom left corner and select Data Engineering
 
-![password](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/password.png)
+![fabricicon](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/fabricicon.png.png)
 
-`Note: You may be prompted for multifactor auth.  Check with your instructor.`
+`Note: If you have not been assigned a Fabric Workspace you may need to create one.  If you are taking a training with and an instructor please check with your instructor.`
 
-You should endup at a screen that looks like this.
+Click on Workspaces on the left nav bar and click on +New workspace
 
-![adbfundamentals](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/adbfundamentals.png)
+![newworkspace](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/newworkspace.png)
 
-Click on the stopped toggle on the VM to start your VM
+Give the workspace a name like fabriclakehouse (or if you have multiple users taking the workshop prehaps add you intials fabriclakehouse-des).  Make sure to chose the Trial License mode under the Advanced area.  Click Apply.
+
+![createws](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/createws.png)
+
+You now should be in your new workspace.  Click on New and choose Lakehouse (Preview).  
+
+![createlh](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/createlh.png)
+
+This will pop up a New Lakehouse dialog.  Enter a name like medicarepartd and click Create
+
+![lhname](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/lhname.png)
+
+This will create an open up your new Lakehouse.
+
+```Note that the Lakehouse and the concept aroung OneLake and Delta/Parquet files is the foundation of Data Engineering, Data Science, Data Wareouse, and Real Time Analytics use cases using Fabric```
+
+![explorelh](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/explorelh.png)
