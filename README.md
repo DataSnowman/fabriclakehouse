@@ -141,3 +141,27 @@ This will open up the Data Factory pipeline.  Click on Add pipeline activity and
 
 ![copydata](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/copydata.png)
 
+Give the Copy activity a name like `Unzip and Copy to raw`
+
+![UnzipCopyRaw](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/UnzipCopyRaw.png)
+
+On the Source tab choose the Workspace, Lakehouse, Files, and File Path and browse to the zip folder and click Ok
+
+![sourcebrowse](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/sourcebrowse.png)
+
+Your source choice should look like this:
+
+File path: `medicare/zip`
+Recursively: checked
+File Format: Binary
+Click on Settings and select Compression Type: `ZipDeflate (.zip)`
+Preserve zip file name as folder: unchecked
+
+![sourceunzip](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/sourceunzip.png)
+
+On the Destination tab choose the Workspace, Lakehouse, Files, and File Path and browse to the raw folder and click Ok
+
+File path: `medicare/raw`
+File Format: Binary
+
+![destinationraw](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/destinationraw.png)
