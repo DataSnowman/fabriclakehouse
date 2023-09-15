@@ -71,6 +71,8 @@ Since we want to create a lakehouse and do data engineering tasks click on the M
 
 `Note: If you have not been assigned a Fabric Workspace you may need to create one.  If you are taking a training with and an instructor please check with your instructor.`
 
+### Create a Workspace
+
 Click on Workspaces on the left nav bar and click on +New workspace
 
 ![newworkspace](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/newworkspace.png)
@@ -78,6 +80,8 @@ Click on Workspaces on the left nav bar and click on +New workspace
 Give the workspace a name like fabriclakehouse (or if you have multiple users taking the workshop prehaps add you intials fabriclakehouse-des).  Make sure to chose the Trial License mode under the Advanced area.  Click Apply.
 
 ![createws](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/createws.png)
+
+### Create a Lakehouse
 
 You now should be in your new workspace.  Click on New and choose Lakehouse (Preview).  
 
@@ -95,6 +99,8 @@ This will create an open up your new Lakehouse.
 
 You are now ready to start doing some data engineering.  You are going to first want to create some new subfolders under Files
 
+### Upload some files into the Lakehouse
+
 ![newsub](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/newsub.png)
 
 Enter a name for your new subfolder and click Create
@@ -109,5 +115,29 @@ You can also use the OneLake Windows Explorer to create subfolders and copy file
 
 ![olwe](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/olwe.png)
 
-Download the
+Download the Medicare PartD files [here](https://data.cms.gov/provider-summary-by-type-of-service/medicare-part-d-prescribers/medicare-part-d-prescribers-by-provider-and-drug/data/2013) for as many years as you like.  At the time of writing this there were 9 years from 2013 to 2021 available.  You can toggle to the year you want to Export and the top and click export to download the year csv as a zip file.
+
+![exportmpd](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/exportmpd.png)
+
+Upload all the zip files into the zip subfolder using the OneLake WIndows Explorer or the Fabric lakehouse browser
+
+![upload](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/upload.png)
+
+All the files should look like this
+
+![zip](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/zip.png)
+
+### Create a Data Factory Pipeline to unzip and copy the files to the raw folder
+
+Go back into the Workspace and create a new Data pipeline.  Click on Data Pipeline 
+
+![newpl](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/newpl.png)
+
+Name the pipeline something like `Unzip and Load csv` and click Create
+
+![createpl](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/createpl.png)
+
+This will open up the Data Factory pipeline.  Click on Add pipeline activity and select Copy data
+
+![copydata](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/copydata.png)
 
