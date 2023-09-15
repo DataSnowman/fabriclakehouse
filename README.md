@@ -152,9 +152,13 @@ On the Source tab choose the Workspace, Lakehouse, Files, and File Path and brow
 Your source choice should look like this:
 
 File path: `medicare/zip`
+
 Recursively: checked
+
 File Format: Binary
+
 Click on Settings and select Compression Type: `ZipDeflate (.zip)`
+
 Preserve zip file name as folder: unchecked
 
 ![sourceunzip](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/sourceunzip.png)
@@ -162,6 +166,7 @@ Preserve zip file name as folder: unchecked
 On the Destination tab choose the Workspace, Lakehouse, Files, and File Path and browse to the raw folder and click Ok
 
 File path: `medicare/raw`
+
 File Format: Binary
 
 ![destinationraw](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/destinationraw.png)
