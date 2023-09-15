@@ -92,3 +92,22 @@ This will create an open up your new Lakehouse.
 ```Note that the Lakehouse and the concept aroung OneLake and Delta/Parquet files is the foundation of Data Engineering, Data Science, Data Wareouse, and Real Time Analytics use cases using Fabric```
 
 ![explorelh](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/explorelh.png)
+
+You are now ready to start doing some data engineering.  You are going to first want to create some new subfolders under Files
+
+![newsub](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/newsub.png)
+
+Enter a name for your new subfolder and click Create
+
+![medicaresf](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/medicaresf.png)
+
+Add additional subfolders so it looks like this
+
+![subs](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/subs.png)
+
+You can also use the OneLake Windows Explorer to create subfolders and copy files
+
+![olwe](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/olwe.png)
+
+Download the
+
