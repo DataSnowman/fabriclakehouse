@@ -170,3 +170,22 @@ File path: `medicare/raw`
 File Format: Binary
 
 ![destinationraw](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/destinationraw.png)
+
+Save and Run the pipeline
+
+![inprogress](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/inprogress.png)
+
+The pipeline will take the zipfiles in `medicare/zip`
+
+![zipfiles](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/zipfiles.png)
+
+And when succeeded
+
+![succeeded](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/succeeded.png)
+
+And uzip them to `medicare/raw`
+
+![unzippedfiles.png](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/zipfiles.png)
+
+### Load all the files into a Delta Table using a Data Engineering Notebook
+
