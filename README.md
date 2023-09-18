@@ -189,3 +189,61 @@ And uzip them to `medicare/raw`
 
 ### Load all the files into a Delta Table using a Data Engineering Notebook
 
+To get a copy of the `LoadMedicarePartDfiles.ipynb` notebook either click [here](https://github.com/DataSnowman/fabriclakehouse/tree/main/medicarepartd/code/notebook) and download the notebook.  Or you can clone the GitHub Repo to your desktop
+
+```
+git clone https://github.com/DataSnowman/fabriclakehouse.git
+```
+Import the notebook into the workspace by navigating to the Data Engineering home and clicking on Import notebook 
+
+![importnb](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/importnb.png)
+
+Click Upload and select the notebook and click Open
+
+![uploadnb](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/uploadnb.png)
+
+Click on Go to workspace
+
+![gotows](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/gotows.png)
+
+Click on the `LoadMedicarePartDfiles` notebook
+
+![loadmpdfiles](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadmpdfiles.png)
+
+If it does not open up in the lakehouse click Add below Add lakehouse
+
+![addlh](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/addlh.png)
+
+Choose Existing lakehouse Add button
+
+![existinglh](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/existinglh.png)
+
+Choose the data you want to connect
+and click Add
+
+![choosedata](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/choosedata.png)
+
+Now your notebook should look like this:
+
+![nbtorun](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/nbtorun.png)
+
+The first two cells of the notebook include schemas for the csvs and for the Delta/Parquet table
+
+![2cells](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/2cells.png)
+
+The third cell has the logic for loading the 9 csv files
+
+![3rdcell](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/3rdcell.png)
+
+You can chose to run one cell at a time or click on Run all.  It will take about 20-25 minutes for the tables to load
+
+When it is running you may get some messages like this since the files have a number of null columns.  This is fine.
+
+![nbrunning](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/nbrunning.png)
+
+The notebook creates the medicarepartd Delta table in the Lakehouse
+
+![medicarepartdtable](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/medicarepartdtable.png)
+
+
+
