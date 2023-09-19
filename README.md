@@ -246,4 +246,38 @@ The notebook creates the medicarepartd Delta table in the Lakehouse
 ![medicarepartdtable](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/medicarepartdtable.png)
 
 
+### Open and query the Delta Table using the Lakehouse SQL endpoint
+
+In the top right corner of the Lakehouse interface you can switch to the SQL Endpoint
+
+![switchtosqlep](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/switchtosqlep.png)
+
+The Delta table automatically creates a SQL Table that can be queried with SQL
+
+![sqlep](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/sqlep.png)
+
+Click on New query
+
+![newquery](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/newquery.png)
+
+Copy the existing query to count the rows loaded by fourdigityear which represents the number of rows in each yearly csv file
+
+```
+SELECT fourdigityear, count(Prscrbr_NPI) FROM medicarepartd
+GROUP BY fourdigityear
+``````
+
+Click Run
+
+![rowsbyyear](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/rowsbyyear.png)
+
+If you highlight the SQL statement
+you can click Save as view to create a view
+
+![saveasaview](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/saveasaview.png)
+
+Click OK 
+
+![viewname](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/viewname.png)
+
 
