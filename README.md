@@ -263,8 +263,7 @@ Click on New query
 Copy the existing query to count the rows loaded by fourdigityear which represents the number of rows in each yearly csv file
 
 ```
-SELECT fourdigityear, count(Prscrbr_NPI) FROM medicarepartd
-GROUP BY fourdigityear
+SELECT fourdigityear, count(Prscrbr_NPI) as numrows FROM medicarepartd GROUP BY fourdigityear
 ``````
 
 Click Run
@@ -279,5 +278,11 @@ you can click Save as view to create a view
 Click OK 
 
 ![viewname](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/viewname.png)
+
+Find the view and look at the data prreview
+
+![viewdatapreview](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/viewdatapreview.png)
+
+### Look at the SQL Endpoint Model
 
 
