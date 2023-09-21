@@ -310,3 +310,115 @@ Click on Autocreate Report
 Give it a couple minutes and `bam` you have created your first report
 
 ![autoreport](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/autoreport.png)
+
+Click on save then name the report `autoreport` and click save
+
+![savereport](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/savereport.png)
+
+If you look back in your workspace you will see your first report
+
+![savefirstreport](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/savefirstreport.png)
+
+
+### Create more of a star schema using a notebook
+
+The next thing you are going to do is cut up the one big table and transform the data into a fact table and some dimension tables.  We are going to do this in a Notebook and then create a new dataset with the new tables.
+
+To get a copy of the `Load cms_provider_fact_star.ipynb` notebook either click [here](https://github.com/DataSnowman/fabriclakehouse/tree/main/medicarepartd/code/notebook) and download the notebook.  Or you can clone the GitHub Repo to your desktop
+
+```
+git clone https://github.com/DataSnowman/fabriclakehouse.git
+```
+Import the notebook into the workspace by navigating to the Data Engineering home and clicking on Import notebook 
+
+![importnb](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/importnb.png)
+
+Click Upload and select the notebook and click Open
+
+![uploadnb2](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/uploadnb2.png)
+
+Click on Go to workspace
+
+![gotows](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/gotows.png)
+
+Click on the `Load cms_provider_fact_star` notebook
+
+![loadstarnb](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadstarnb.png)
+
+If it does not open up in the lakehouse click Add below Add lakehouse
+
+![addlh](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/addlh.png)
+
+Choose Existing lakehouse Add button
+
+![existinglh](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/existinglh.png)
+
+Choose the data you want to connect
+and click Add
+
+![choosedata](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/choosedata.png)
+
+Now your notebook should look like this:
+
+![nb2torun](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/nb2torun.png)
+
+The note book contains a series of cells that first create a Spark TEMPORARY VIEW like `cms_provider_dim_drug_lhvw`
+
+And then create a new Delta Table using that temporary view
+
+![tempviewdeltacells](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/tempviewdeltacells.png)
+
+You can chose to run one cell at a time or click on Run all.  It will take about 20 minutes for the tables to load
+
+The notebook creates the new fact and dimension Delta tables in the Lakehouse.
+
+![dimandfacttables](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/dimandfacttables.png)
+
+
+The SQL takes advantage of the Over clause and creates tables the way you typically would in a MPP Data Warehouse.  I got this code from one of my peers in Health and life sciences.  I don't fully understand the logic of creating the dimensions and I will try to (in the future) update this code with and option of creating slowly changing dimensions using MD5 hash for primary surogate keys and effective dates and then load the fact table using those surogate keys.  Lots of thought and work to be done for this however.
+
+### Create a new Power BI dataset
+
+In the Lake house click on `New Power BI dataset`
+
+Select the dimensions and fact table and click Confirm
+
+![newdsdialog](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/newdsdialog.png)
+
+Here are the tables
+
+![startables](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/startables.png)
+
+Create the join relationships
+
+Start with the key in the fact and drag it to the key in the dimension. Click the Assume referential integrity box and click Confirm
+
+![relationships](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/relationships.png)
+
+year to year
+drug_key to drug_key
+geo_key to geo_key
+provider_key to provider_key
+
+![star](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/star.png)
+
+Give the dataset a name like `medicarepartdstar`
+
+![medicarepartdstar](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/medicarepartdstar.png)
+
+Back in the workspace filter on Dataset and find you new dataset
+
+![medicarepartdstards](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/medicarepartdstards.png)
+
+Click on the new dataset and see all the options you have.  Go ahead and try to:
+
+    - Create a report
+    - Create paginated report
+
+
+![dsoptions](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/dsoptions.png)
+
+### Put the Data factory pipeline all together
+
+`Note: This was a bit finicy when I ran this on my trial capacity.  I needed to use a Fabric Capacity I created in the Azure Portal to get  the pipeline to run the notebook activities successfully`
+
