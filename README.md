@@ -285,4 +285,28 @@ Find the view and look at the data prreview
 
 ### Look at the SQL Endpoint Model
 
+From what you have done in the Lakehouse so far you should have 2 tables in the Model.  One is the Delta table `medicarepartd` you created with the notebook and the second is the view you created in the SQL Endpoint `countofrowsbyyear`
 
+![model](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/model.png)
+
+Now like in Power BI Desktop this is where you would create the model you use in Power BI.  For now we will keep it separate and just hide the `countofrowsbyyear` and just use the one big table.
+
+To hide the view click on the eye looking icon in the top right corner of the view.  This will put a \ across the icon and hide the view.
+
+![hideview](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/hideview.png)
+
+### Autocreate a Report
+
+This will become the default dataset in your Workspace for this Lakehouse.  Navigate back to the workspace to find the default dataset
+
+![defaultds](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/defaultds.png)
+
+Click on the 3 dots at the end of the name of the medicarepartd default data set.  Just to the left of the Type dataset (default).
+
+Click on Autocreate Report
+
+![autocreatereport](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/autocreatereport.png)
+
+Give it a couple minutes and `bam` you have created your first report
+
+![autoreport](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/autoreport.png)
