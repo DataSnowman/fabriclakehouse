@@ -463,12 +463,21 @@ Click on Activities on the menu and select Notebook
 
 ![nbactivity](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/nbactivity.png)
 
-Name the activity `Load Medicare PartD files` 
+Name the activity `Load cms_provider_fact_star` 
 
-![loadmpdfilesactivity](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadmpdfilesactivity.png)
+![loadcmsprovfactstar](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadcmsprovfactstar.png)
 
 In the Setting tab select the 
-`LoadMedicarePartDfiles` notebook
+`Load cms_provider_fact_star` notebook
 
-![loadmpdfilesnb](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadmpdfilesnb.png)
+![settingstart](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/settingstart.png)
 
+Join the activites together by dragging the green On success checkmark to the next activity
+
+![onsuccess](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/onsuccess.png)
+
+Save and Run the Pipeline.
+
+`Note this will rerun all the items you have run in the workshop.  You may not want to do this, but this is how you would orchestrate all the Data Engineering steps you have created in this workshop`
+
+Congrats on completing this part!
