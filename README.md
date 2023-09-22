@@ -422,3 +422,53 @@ Click on the new dataset and see all the options you have.  Go ahead and try to:
 
 `Note: This was a bit finicy when I ran this on my trial capacity.  I needed to use a Fabric Capacity I created in the Azure Portal to get  the pipeline to run the notebook activities successfully`
 
+You can create a pipeline that combines 1) the previous copy activity pipeline that unziped the file and copied them to the raw folder, 2) the `LoadMedicarePartDfiles` notebook, and 3) the `Load cms_provider_fact_star.ipynb` notebook
+
+To do this go to your workspace and select New datapipeline
+
+![newdp](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/newdp.png)
+
+Name the pipeline `RunCopyAndNotebookActivities` and click Create
+
+![RunCopyAndNotebookActivities](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/RunCopyAndNotebookActivities.png)
+
+Click on Add pipeline activity
+and type in `Invoke pipeline` and select the activity
+
+![invokepl](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/invokepl.png)
+
+Name the activity `Invoke Unzip Pipeline`
+
+![invokeunzippl](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/invokeunzippl.png)
+
+In the Setting tab select the 
+Unzip and Load csv pipeline
+
+![unzipandloadcsv](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/unzipandloadcsv.png)
+
+Click on Activities on the menu and select Notebook
+
+![nbactivity](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/nbactivity.png)
+
+Name the activity `Load Medicare PartD files` 
+
+![loadmpdfilesactivity](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadmpdfilesactivity.png)
+
+In the Setting tab select the 
+`LoadMedicarePartDfiles` notebook
+
+![loadmpdfilesnb](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadmpdfilesnb.png)
+
+Click on Activities on the menu and select Notebook
+
+![nbactivity](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/nbactivity.png)
+
+Name the activity `Load Medicare PartD files` 
+
+![loadmpdfilesactivity](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadmpdfilesactivity.png)
+
+In the Setting tab select the 
+`LoadMedicarePartDfiles` notebook
+
+![loadmpdfilesnb](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/loadmpdfilesnb.png)
+
