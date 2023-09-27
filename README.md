@@ -67,7 +67,7 @@ Log into Microsoft Fabric at https://fabric.microsoft.com with your Azure Active
 
 Since we want to create a lakehouse and do data engineering tasks click on the Microsoft Fabric icon in the bottom left corner and select Data Engineering
 
-![fabricicon](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/fabricicon.png.png)
+![fabricicon](https://raw.githubusercontent.com/datasnowman/fabriclakehouse/main/images/fabricicon.png)
 
 `Note: If you have not been assigned a Fabric Workspace you may need to create one.  If you are taking a training with and an instructor please check with your instructor.`
 
